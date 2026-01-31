@@ -7,5 +7,4 @@ export * from './helpers/bootstrap.helper';
 export * from './helpers/swagger.helper';
 export * from './middlewares/logger.middleware';
 export * from './modules/vault/vault.module';
-export * from './modules/vault/vault.service.spec';
 export * from './modules/vault/vault.service';
