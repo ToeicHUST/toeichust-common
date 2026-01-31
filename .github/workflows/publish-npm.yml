@@ -1,0 +1,72 @@
+name: Publish NPM package
+
+on:
+  push:
+    branches:
+      - main
+      - develop
+
+jobs:
+  publish:
+    runs-on: ubuntu-latest
+    permissions:
+      contents: write
+      packages: write
+
+    steps:
+      - name: Import Secrets from Vault
+        uses: hashicorp/vault-action@v3
+        with:
+          url: ${{ secrets.VAULT_ADDR }}
+          method: approle
+          roleId: ${{ secrets.VAULT_ROLE_ID_PROD }}
+          secretId: ${{ secrets.VAULT_SECRET_ID_PROD }}
+          secrets: |
+            ${{ secrets.VAULT_DATA_PATH_PROD }} NPM_TOKEN | NPM_TOKEN ;
+
+      - name: Checkout code
+        uses: actions/checkout@v4
+        with:
+          fetch-depth: 0
+
+      - name: Setup Node.js
+        uses: actions/setup-node@v4
+        with:
+          node-version: '20'
+          registry-url: 'https://registry.npmjs.org'
+
+      - name: Install dependencies
+        # run: npm ci
+        run: npm install
+
+      - name: Generate Barrels
+        run: npm run generate-barrels
+
+      - name: Build project
+        run: npm run build
+
+      - name: Configure Git
+        run: |
+          git config --global user.name 'github-actions[bot]'
+          git config --global user.email 'github-actions[bot]@users.noreply.github.com'
+
+      - name: Bump version and Push
+        if: github.ref == 'refs/heads/main' 
+        run: |
+          npm version patch -m "chore(release): bump version to %s [skip ci]"
+
+          git push
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+
+      - name: Publish to NPM (Dry Run)
+        if: github.ref == 'refs/heads/develop'
+        run: npm publish --dry-run
+        env:
+          NODE_AUTH_TOKEN: ${{ env.NPM_TOKEN }}
+
+      - name: Publish to NPM
+        if: github.ref == 'refs/heads/main'
+        run: npm publish
+        env:
+          NODE_AUTH_TOKEN: ${{ env.NPM_TOKEN }}
