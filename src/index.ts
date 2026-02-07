@@ -3,6 +3,10 @@
  */
 
 export * from './constants/swagger.constant';
+export * from './ddd/core/domain/exceptions/domain.exception/domain.exception';
+export * from './ddd/core/domain/exceptions/invalid-score.exception/invalid-score.exception';
+export * from './ddd/core/domain/value-objects/score/score';
+export * from './filters/error-handler.filter';
 export * from './helpers/bootstrap.helper';
 export * from './helpers/swagger.helper';
 export * from './middlewares/logger.middleware';
