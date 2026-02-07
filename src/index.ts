@@ -3,9 +3,13 @@
  */
 
 export * from './constants/swagger.constant';
+export * from './ddd/core/application/ports/event-publisher/repositories/publisher-event.port/publisher-event.port';
 export * from './ddd/core/domain/exceptions/domain.exception/domain.exception';
 export * from './ddd/core/domain/exceptions/invalid-score.exception/invalid-score.exception';
 export * from './ddd/core/domain/value-objects/score/score';
+export * from './ddd/events/base-domain-event.interface/base-domain-event.interface';
+export * from './ddd/events/event-topics.constant/event-topics.constant';
+export * from './ddd/events/target-updated.event/target-updated.event';
 export * from './filters/error-handler.filter';
 export * from './helpers/bootstrap.helper';
 export * from './helpers/swagger.helper';
@@ -18,5 +22,7 @@ export * from './modules/auth/enums/user-role.enum';
 export * from './modules/auth/guards/jwt-auth.guard';
 export * from './modules/auth/guards/roles.guard';
 export * from './modules/auth/strategies/jwt.strategy';
+export * from './modules/event-publisher/event-publisher.adapter';
+export * from './modules/event-publisher/event-publisher.module';
 export * from './modules/vault/vault.module';
 export * from './modules/vault/vault.service';
