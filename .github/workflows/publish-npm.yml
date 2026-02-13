@@ -16,6 +16,7 @@ jobs:
       - uses: actions/setup-node@v4
         with:
           node-version: '20'
+          registry-url: 'https://registry.npmjs.org'
           cache: 'npm'
 
       - name: Calculate cache key
@@ -34,12 +35,16 @@ jobs:
 
   publish:
     runs-on: ubuntu-latest
+    permissions:
+      contents: write
+      packages: write
     needs: install-deps
     steps:
       - uses: actions/checkout@v4
       - uses: actions/setup-node@v4
         with:
           node-version: '20'
+          registry-url: 'https://registry.npmjs.org'
           cache: 'npm'
 
       - name: Download cached dependencies
