@@ -17,8 +17,8 @@ export function setupSwagger(
   // options: SwaggerConfigOptions,
 ) {
   const swaggerConfig = new DocumentBuilder()
-    .setTitle(process.env.NAME_SERVICE || 'Tên mặc định')
-    .setVersion(process.env.npm_package_version || '1.0.0')
+    // .setTitle(process.env.NAME_SERVICE || 'Tên mặc định')
+    // .setVersion(process.env.npm_package_version || '1.0.0')
     .setContact('vuvannghia.work@gmail.com', '', 'vuvannghia.work@gmail.com')
     .setDescription(SWAGGER_DESCRIPTION)
     .addBearerAuth(
