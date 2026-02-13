@@ -7,11 +7,6 @@ export const SWAGGER_CUSTOM_FAVICON =
 export const SWAGGER_DESCRIPTION = `<table border="0">
   <tr>
     <td>
-      <h3>Giới thiệu</h3>
-      <ul>
-        <li>Đây là API cho <code>${process.env.NAME_SERVICE || 'Tên mặc định'}</code></li>
-        <li><a href="https://github.com/${process.env.NAME_SERVICE || 'Tên mặc định'}">Xem thông tin github</a></li>
-      </ul>
       <h3>JSON và YAML docs:</h3>
       <ul>
         <li><a href="/${SWAGGER_DOCS_PATH}/json">Xem thông tin json</a></li>
