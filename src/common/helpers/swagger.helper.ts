@@ -3,7 +3,6 @@ import { DocumentBuilder, SwaggerModule } from '@nestjs/swagger';
 import {
   SWAGGER_AUTH_KEY,
   SWAGGER_CUSTOM_FAVICON,
-  SWAGGER_DESCRIPTION,
   SWAGGER_DOCS_PATH,
   SWAGGER_UI_CDN,
 } from '../constants/swagger.constant';
@@ -19,8 +18,8 @@ export function setupSwagger(
   const swaggerConfig = new DocumentBuilder()
     // .setTitle(process.env.NAME_SERVICE || 'Tên mặc định')
     // .setVersion(process.env.npm_package_version || '1.0.0')
-    .setContact('vuvannghia.work@gmail.com', '', 'vuvannghia.work@gmail.com')
-    .setDescription(SWAGGER_DESCRIPTION)
+    // .setContact('vuvannghia.work@gmail.com', '', 'vuvannghia.work@gmail.com')
+    // .setDescription(SWAGGER_DESCRIPTION)
     .addBearerAuth(
       {
         type: 'http',
