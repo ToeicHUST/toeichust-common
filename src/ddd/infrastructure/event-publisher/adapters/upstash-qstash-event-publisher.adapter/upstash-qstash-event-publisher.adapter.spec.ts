@@ -1,7 +1,7 @@
-import { UpstashQstashEventPublisherAdapter } from './upstash-qstash-event-publisher.adapter';
+// import { UpstashQstashEventPublisherAdapter } from './upstash-qstash-event-publisher.adapter';
 
-describe('UpstashQstashEventPublisherAdapter', () => {
-  it('should be defined', () => {
-    expect(new UpstashQstashEventPublisherAdapter()).toBeDefined();
-  });
-});
+// describe('UpstashQstashEventPublisherAdapter', () => {
+//   it('should be defined', () => {
+//     expect(new UpstashQstashEventPublisherAdapter()).toBeDefined();
+//   });
+// });

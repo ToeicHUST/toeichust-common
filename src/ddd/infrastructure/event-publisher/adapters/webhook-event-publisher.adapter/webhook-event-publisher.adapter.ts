@@ -2,11 +2,11 @@ import { HttpService } from '@nestjs/axios';
 import { Injectable, Logger } from '@nestjs/common';
 import { ConfigService } from '@nestjs/config';
 import { firstValueFrom, retry, timer } from 'rxjs';
-import { WebhookEventPublisherPort } from '../../../../core/application/ports/event-publisher/repositories/webhook-event-publisher.port/webhook-event-publisher.port';
+import { EventPublisherPort } from '../../../../core/application/ports/event-publisher/repositories/event-publisher.port/event-publisher.port';
 import { IBaseDomainEvent } from '../../../../core/domain/events/base-domain-event.interface/base-domain-event.interface';
 
 @Injectable()
-export class WebhookEventPublisherAdapter implements WebhookEventPublisherPort {
+export class WebhookEventPublisherAdapter implements EventPublisherPort {
   private readonly logger = new Logger(WebhookEventPublisherAdapter.name);
 
   constructor(
