@@ -1,11 +1,11 @@
 import { Injectable, Logger } from '@nestjs/common';
 import { ConfigService } from '@nestjs/config';
 import { Client } from '@upstash/qstash';
-import { UpstashQstashEventPublisherPort } from '../../../../core/application/ports/event-publisher/repositories/upstash-qstash-event-publisher.port/upstash-qstash-event-publisher.port';
+import { EventPublisherPort } from '../../../../core/application/ports/event-publisher/repositories/event-publisher.port/event-publisher.port';
 import { IBaseDomainEvent } from '../../../../core/domain/events/base-domain-event.interface/base-domain-event.interface';
 
 @Injectable()
-export class UpstashQstashEventPublisherAdapter implements UpstashQstashEventPublisherPort {
+export class UpstashQstashEventPublisherAdapter implements EventPublisherPort {
   private readonly logger = new Logger(UpstashQstashEventPublisherAdapter.name);
 
   constructor(private readonly configService: ConfigService) {}

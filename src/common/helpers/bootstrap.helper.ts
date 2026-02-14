@@ -10,8 +10,8 @@ export function logAppBootstrap(app: INestApplication) {
   const port = typeof address === 'string' ? address : address.port;
 
   console.log(`ENVIRONMENT: ${process.env.NODE_ENV}`);
-  console.log(`NAME: ${process.env.NAME_SERVICE}`);
-  console.log(`PORT: ${port}`);
+  // console.log(`NAME: ${process.env.NAME_SERVICE}`);
+  // console.log(`PORT: ${port}`);
   console.log(
     `Application is running on: http://toeicHUST.local:${port}/${SWAGGER_DOCS_PATH}`,
   );
