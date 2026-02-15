@@ -15,8 +15,12 @@ export function logAppBootstrap(app: INestApplication) {
   console.log(
     `Application is running on: http://toeicHUST.local:${port}/${SWAGGER_DOCS_PATH}`,
   );
-  console.log(`DEV: https://dev-${process.env.NAME_SERVICE}.toeichust.me`);
-  console.log(`PROD: https://${process.env.NAME_SERVICE}.toeichust.me`);
+  console.log(
+    `DEV: https://dev-${process.env.NAME_SERVICE}.toeichust.me/${SWAGGER_DOCS_PATH}`,
+  );
+  console.log(
+    `PROD: https://${process.env.NAME_SERVICE}.toeichust.me/${SWAGGER_DOCS_PATH}`,
+  );
 
   console.log(
     `GOOGLE: ${configService.get<string>(
