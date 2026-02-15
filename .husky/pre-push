@@ -5,6 +5,10 @@
 echo "🔍 Checking code quality before push..."
 echo ""
 
+
+npm run generate-barrels
+
+
 # Build project
 echo "🏗️  Building project..."
 npm run build || {

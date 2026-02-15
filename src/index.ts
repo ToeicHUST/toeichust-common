@@ -8,6 +8,7 @@ export * from './common/helpers/bootstrap.helper';
 export * from './common/helpers/swagger.helper';
 export * from './common/middlewares/logger.middleware';
 export * from './ddd/api/http/dto/request.dto/event-listener.request.dto';
+export * from './ddd/api/http/dto/response.dto/base.response.dto';
 export * from './ddd/core/application/ports/event-publisher/repositories/event-publisher.port';
 export * from './ddd/core/domain/entities/aggregate-root';
 export * from './ddd/core/domain/entities/domain.entity';
