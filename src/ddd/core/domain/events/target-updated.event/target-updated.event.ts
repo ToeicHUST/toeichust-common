@@ -1,12 +1,12 @@
-import { IBaseDomainEvent } from '../base-domain-event.interface/base-domain-event.interface';
+import { IDomainEvent } from '../domain-event.interface/domain-event.interface';
 import { EventTopics } from '../event-topics.constant/event-topics.constant';
 
-export class TargetUpdatedEvent implements IBaseDomainEvent {
+export class TargetUpdatedEvent implements IDomainEvent {
   topic = EventTopics.TARGET_UPDATED;
   data: {
     // version: number;
     targetId: string;
-    userId: string;
+    learnerId: string;
     score: number | null;
 
     targetDate: Date | null;
@@ -16,7 +16,7 @@ export class TargetUpdatedEvent implements IBaseDomainEvent {
 
   constructor(
     targetId: string,
-    userId: string,
+    learnerId: string,
     score: number | null,
     targetDate: Date | null,
     createdAt: Date,
@@ -25,7 +25,7 @@ export class TargetUpdatedEvent implements IBaseDomainEvent {
     this.data = {
       // version: 1,
       targetId,
-      userId,
+      learnerId,
       score,
       targetDate,
       createdAt,

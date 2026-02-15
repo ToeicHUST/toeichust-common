@@ -1,6 +1,6 @@
 import { EventTopics } from '../event-topics.constant/event-topics.constant';
 
-export interface IBaseDomainEvent {
+export interface IDomainEvent {
   topic: EventTopics;
   data: any;
 }

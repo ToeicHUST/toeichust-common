@@ -2,8 +2,8 @@ import { HttpService } from '@nestjs/axios';
 import { Injectable, Logger } from '@nestjs/common';
 import { ConfigService } from '@nestjs/config';
 import { firstValueFrom, retry, timer } from 'rxjs';
-import { EventPublisherPort } from '../../../../core/application/ports/event-publisher/repositories/event-publisher.port/event-publisher.port';
-import { IBaseDomainEvent } from '../../../../core/domain/events/base-domain-event.interface/base-domain-event.interface';
+import { EventPublisherPort } from '../../../../core/application/ports/event-publisher/repositories/event-publisher.port';
+import { IDomainEvent } from '../../../../core/domain/events/domain-event.interface/domain-event.interface';
 
 @Injectable()
 export class WebhookEventPublisherAdapter implements EventPublisherPort {
@@ -14,7 +14,7 @@ export class WebhookEventPublisherAdapter implements EventPublisherPort {
     private readonly configService: ConfigService,
   ) {}
 
-  async publish(event: IBaseDomainEvent): Promise<void> {
+  async publish(event: IDomainEvent): Promise<void> {
     this.logger.debug(`Sending event: ${event.topic}...`);
 
     const MICROSERVICES_WEBHOOK_EVENT_URL =
