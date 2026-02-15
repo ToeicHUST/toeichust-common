@@ -1,4 +1,4 @@
-import { EventPublisherPort } from './event-publisher.port';
+import { EventPublisherPort } from './event-publisher.port/event-publisher.port';
 
 describe('PublisherEventPort', () => {
   it('should be an abstract class', () => {

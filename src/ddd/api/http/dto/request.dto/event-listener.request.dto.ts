@@ -1,7 +1,7 @@
-import { IBaseDomainEvent } from '../../../../core/domain/events/base-domain-event.interface/base-domain-event.interface';
+import { IDomainEvent } from '../../../../core/domain/events/domain-event.interface/domain-event.interface';
 import { EventTopics } from '../../../../core/domain/events/event-topics.constant/event-topics.constant';
 
-export class EventDataListenerRequestDto implements IBaseDomainEvent {
+export class EventDataListenerRequestDto implements IDomainEvent {
   topic: EventTopics;
   data: any;
 }
