@@ -3,6 +3,7 @@ import { DocumentBuilder, SwaggerModule } from '@nestjs/swagger';
 import {
   SWAGGER_AUTH_KEY,
   SWAGGER_CUSTOM_FAVICON,
+  SWAGGER_DESCRIPTION,
   SWAGGER_DOCS_PATH,
   SWAGGER_UI_CDN,
 } from '../constants/swagger.constant';
@@ -16,10 +17,10 @@ export function setupSwagger(
   // options: SwaggerConfigOptions,
 ) {
   const swaggerConfig = new DocumentBuilder()
-    // .setTitle(process.env.NAME_SERVICE || 'Tên mặc định')
-    // .setVersion(process.env.npm_package_version || '1.0.0')
-    // .setContact('vuvannghia.work@gmail.com', '', 'vuvannghia.work@gmail.com')
-    // .setDescription(SWAGGER_DESCRIPTION)
+    .setTitle(process.env.NAME_SERVICE || 'ToeicHUST')
+    .setVersion(process.env.npm_package_version || '1.0.0')
+    .setContact('vuvannghia.work@gmail.com', '', 'vuvannghia.work@gmail.com')
+    .setDescription(SWAGGER_DESCRIPTION)
     .addBearerAuth(
       {
         type: 'http',
@@ -42,7 +43,7 @@ export function setupSwagger(
   const baseOptions = {
     jsonDocumentUrl: `${SWAGGER_DOCS_PATH}/json`,
     yamlDocumentUrl: `${SWAGGER_DOCS_PATH}/yaml`,
-    customSiteTitle: process.env.NAME_SERVICE || 'Tên mặc định',
+    customSiteTitle: process.env.NAME_SERVICE || 'ToeicHUST',
     customfavIcon: `${SWAGGER_CUSTOM_FAVICON}`,
     swaggerOptions: {
       persistAuthorization: true,
