@@ -1,5 +1,5 @@
-import { InvalidScoreException } from '../../exceptions/invalid-score.exception/invalid-score.exception';
-import { Score } from './score';
+import { InvalidScoreException } from '../exceptions/invalid-score.exception';
+import { Score } from './score/score';
 
 describe('Score', () => {
   it('should create an instance with a valid score (e.g., 450)', () => {

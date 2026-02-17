@@ -1,4 +1,4 @@
-import { DomainException } from '../domain.exception/domain.exception';
+import { DomainException } from './domain.exception';
 
 export class InvalidScoreException extends DomainException {
   constructor(value: number, min: number, max: number, step: number) {
