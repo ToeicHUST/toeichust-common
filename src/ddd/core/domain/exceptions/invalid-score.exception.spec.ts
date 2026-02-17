@@ -1,4 +1,4 @@
-import { DomainException } from '../domain.exception/domain.exception';
+import { DomainException } from './domain.exception';
 import { InvalidScoreException } from './invalid-score.exception';
 
 describe('InvalidScoreException', () => {

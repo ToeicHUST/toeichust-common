@@ -1,5 +1,5 @@
-import { InvalidScoreException } from '../../exceptions/invalid-score.exception/invalid-score.exception';
-import { DomainValueObject } from '../domain-value-object/domain-value-object';
+import { InvalidScoreException } from '../exceptions/invalid-score.exception';
+import { DomainValueObject } from './domain-value-object';
 
 export class Score extends DomainValueObject<number> {
   private static readonly MIN_VALUE = 10;
@@ -9,12 +9,12 @@ export class Score extends DomainValueObject<number> {
   value: number;
 
   constructor(value: number) {
+    Score.validate(value);
     super(value);
     this.value = value;
-    this.validate(value);
   }
 
-  private validate(value: number) {
+  private static validate(value: number) {
     const isOutOfRange = value < Score.MIN_VALUE || value > Score.MAX_VALUE;
 
     const isNotDivisibleByStep = value % Score.STEP !== 0;
