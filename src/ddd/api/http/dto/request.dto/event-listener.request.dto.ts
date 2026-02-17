@@ -1,5 +1,5 @@
-import { IDomainEvent } from '../../../../core/domain/events/domain-event.interface/domain-event.interface';
-import { EventTopics } from '../../../../core/domain/events/event-topics.constant/event-topics.constant';
+import { EventTopics } from '../../../../core/domain/events/constants/event-topics.constant';
+import { IDomainEvent } from '../../../../core/domain/events/domain-event.interface';
 
 export class EventDataListenerRequestDto implements IDomainEvent {
   topic: EventTopics;

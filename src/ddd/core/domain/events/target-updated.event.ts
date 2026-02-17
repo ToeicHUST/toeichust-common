@@ -1,15 +1,15 @@
-import { IDomainEvent } from '../domain-event.interface/domain-event.interface';
-import { EventTopics } from '../event-topics.constant/event-topics.constant';
+import { EventTopics } from './constants/event-topics.constant';
+import { IDomainEvent } from './domain-event.interface';
 
 export class TargetUpdatedEvent implements IDomainEvent {
   topic = EventTopics.TARGET_UPDATED;
   data: {
-    // version: number;
     targetId: string;
     learnerId: string;
     score: number | null;
 
     targetDate: Date | null;
+
     createdAt: Date;
     updatedAt: Date;
   };
@@ -23,7 +23,6 @@ export class TargetUpdatedEvent implements IDomainEvent {
     updatedAt: Date,
   ) {
     this.data = {
-      // version: 1,
       targetId,
       learnerId,
       score,
