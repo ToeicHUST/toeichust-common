@@ -1,5 +1,5 @@
 import { Target } from '../../entities/target/target';
-import { TargetUpdatedEvent } from './target-updated.event';
+import { TargetUpdatedEvent } from './target-updated.event/target-updated.event';
 
 describe('TargetUpdatedEvent', () => {
   it('should be defined', () => {

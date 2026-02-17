@@ -3,7 +3,7 @@ import { Injectable, Logger } from '@nestjs/common';
 import { ConfigService } from '@nestjs/config';
 import { firstValueFrom, retry, timer } from 'rxjs';
 import { EventPublisherPort } from '../../../../core/application/ports/event-publisher/repositories/event-publisher.port';
-import { IDomainEvent } from '../../../../core/domain/events/domain-event.interface/domain-event.interface';
+import { IDomainEvent } from '../../../../core/domain/events/domain-event.interface';
 
 @Injectable()
 export class WebhookEventPublisherAdapter implements EventPublisherPort {
